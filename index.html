@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carikost.id - Solusi Cari Kost Terbaik</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- TEMA WARNA (TEAL MODERN) --- */
+        :root { 
+            --main-color: #00796B; 
+            --main-color-dark: #00695c;
+            --secondary-color: #0288d1; /* Biru */
+            --bg-light: #f4f6f8; 
+            --text-dark: #2f3542;
+            --text-muted: #666;
+            --primary-gradient: linear-gradient(135deg, var(--main-color-dark) 0%, #4db6ac 100%);
+            --card-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        /* BASE STYLES */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: white; 
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        .container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+        }
+        a { text-decoration: none; color: var(--main-color); transition: 0.3s; }
+
+        /* NAV BAR */
+        .navbar { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 20px 0; 
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .logo { 
+            font-size: 1.6em; 
+            font-weight: 800; 
+            color: var(--main-color); 
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-left: 25px;
+            font-size: 0.95em;
+        }
+        .btn-login {
+            padding: 8px 18px;
+            border: 1px solid var(--main-color);
+            border-radius: 8px;
+            font-weight: 600;
+            background: white;
+            color: var(--main-color);
+        }
+        .btn-login:hover {
+            background: var(--main-color);
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: var(--primary-gradient);
+            padding: 80px 0;
+            color: white;
+            border-radius: 0 0 50px 50px;
+            margin-bottom: 50px;
+        }
+        .hero-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-text h1 {
+            font-size: 3em;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.1em;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+        .hero-cta {
+            padding: 15px 30px;
+            background: var(--color-yellow, #ffc107); /* Menggunakan warna kuning untuk CTA */
+            color: var(--text-dark);
+            font-weight: 700;
+            font-size: 1.1em;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+            transition: 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .hero-cta:hover {
+            background: #e6a000;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 193, 7, 0.5);
+        }
+        .hero-image {
+            max-width: 40%;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* SECTION FEATURES */
+        .section-features {
+            padding: 40px 0;
+            text-align: center;
+        }
+        .section-features h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            font-weight: 700;
+            color: var(--main-color-dark);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .feature-card {
+            background: var(--bg-light);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            text-align: left;
+            transition: 0.3s;
+        }
+        .feature-card:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transform: translateY(-5px);
+        }
+        .feature-card i {
+            font-size: 2.5em;
+            color: var(--main-color);
+            margin-bottom: 15px;
+        }
+        .feature-card h3 {
+            font-size: 1.3em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .feature-card p {
+            font-size: 0.95em;
+            color: var(--text-muted);
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 30px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .footer-logo h4 {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: var(--main-color);
+            margin-bottom: 10px;
+        }
+        .footer-logo p {
+            color: #ccc;
+        }
+        .footer-links div {
+            margin-bottom: 10px;
+        }
+        .footer-links h5 {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .footer-links a {
+            display: block;
+            color: #ccc;
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+        .footer-links a:hover {
+            color: var(--main-color);
+        }
+        .footer-bottom {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            text-align: center;
+            color: #ccc;
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-image {
+                max-width: 80%;
+                margin-top: 30px;
+            }
+            .hero-text h1 {
+                font-size: 2.5em;
+            }
+            .nav-links {
+                display: none; /* Sembunyikan link di HP agar navbar ringkas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="index.html" class="logo"><i class="fa-solid fa-house-chimney"></i> Carikost.id</a>
+                <div class="nav-links">
+                    <a href="#fitur">Fitur</a>
+                    <a href="#tentang">Tentang Kami</a>
+                    <a href="login.php" class="btn-login">Masuk</a>
+                </div>
+                <a href="login.php" class="btn-login" style="display: none; visibility: hidden;">Masuk</a>
+            </nav>
+        </div>
+
+        <div class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Temukan Kost Impianmu Tanpa Ribet, Cepat & Aman</h1>
+                        <p>Ribuan pilihan kamar kost, dari yang termurah hingga premium, tersedia di genggaman Anda. Mulai cari sekarang!</p>
+                        <a href="cari_kost.php" class="hero-cta">
+                            <i class="fa-solid fa-magnifying-glass-location"></i> Cari Kost Sekarang
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="fitur" class="section-features">
+            <div class="container">
+                <h2>Mengapa Memilih Carikost.id?</h2>
+                <div class="features-grid">
+                    
+                    <div class="feature-card">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <h3>Pencarian Akurat</h3>
+                        <p>Cari berdasarkan lokasi spesifik, harga, dan fasilitas. Data kost terverifikasi dan terbaru, anti zonk!</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fa-solid fa-comment-dots"></i>
+                        <h3>Chat Langsung</h3>
+                        <p>Hubungi pemilik kost tanpa perantara. Tanyakan detail, negosiasi, dan janjian survei dengan mudah.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <h3>Booking Aman</h3>
+                        <p>Bayar aman melalui sistem kami dengan berbagai metode pembayaran (Transfer, QRIS, dll.) dan dapatkan konfirmasi instan.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section id="cta-pemilik" style="text-align: center; padding: 50px 0;">
+            <div class="container">
+                <h2 style="font-size: 1.8em; margin-bottom: 15px;">Anda Pemilik Kost?</h2>
+                <p style="font-size: 1.1em; color: var(--text-muted); margin-bottom: 30px;">Kelola unit Anda dan dapatkan penyewa lebih cepat tanpa komisi besar.</p>
+                <a href="register.php" style="padding: 12px 30px; background: var(--secondary-color); color: white; font-weight: 600; border-radius: 8px; transition: 0.3s;">
+                    Daftarkan Kost Anda <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h4><i class="fa-solid fa-house-chimney" style="color: var(--main-color);"></i> Carikost.id</h4>
+                    <p>Solusi manajemen dan pencarian kost modern.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h5>Navigasi</h5>
+                    <a href="cari_kost.php">Cari Kost</a>
+                    <a href="login.php">Login Penyewa</a>
+                    <a href="register.php">Login Pemilik</a>
+                </div>
+
+                <div class="footer-links">
+                    <h5>Dukungan</h5>
+                    <a href="bantuan.php">Hubungi Kami</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2025 Carikost.id. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
