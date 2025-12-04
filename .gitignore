@@ -1,8 +1,6 @@
 # Firebase Security Key
 firebase_key.json
-.env  
-
-# Dependencies and temporary files
+.env
 /vendor/
 *.log
 .DS_Store
