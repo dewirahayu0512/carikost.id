@@ -1,0 +1,76 @@
+/* 1. Import Font Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    /* Menggunakan Font Poppins */
+    font-family: 'Poppins', sans-serif;
+    
+    /* Background Gradient Pink ke Biru */
+    background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    padding: 30px; /* Sedikit diperlebar agar lega */
+    border-radius: 15px; /* Sudut lebih melengkung */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1); /* Bayangan lebih halus */
+    width: 300px;
+    text-align: center; /* Opsi tambahan: agar isi tengah */
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px 0;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Input lebih tumpul */
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Efek saat input diklik/fokus */
+input:focus, select:focus {
+    border-color: #a18cd1; /* Warna border jadi ungu/biru muda */
+    box-shadow: 0 0 5px rgba(161, 140, 209, 0.3);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0 15px 0;
+    box-sizing: border-box;
+    
+    /* Warna Tombol Pink */
+    background: #ff6b81; 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600; /* Font lebih tebal */
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    /* Warna saat mouse di atas tombol (Pink lebih gelap) */
+    background: #ff4757; 
+}
+
+a {
+    text-decoration: none;
+    /* Warna Link Biru */
+    color: #00a8ff; 
+    font-weight: 500;
+    font-size: 0.9em;
+}
+
+a:hover {
+    color: #0077b6;
+    text-decoration: underline;
+}
